@@ -58,7 +58,6 @@ if opcion=='TAREA_4':
     st.subheader('Tema 4')
     st.text('Viajes de Uber en la ciudad de Nueva York con filtros por hora. ')
 
-    @st.cache 
 
     def load_data(nrows): 
         data = pd.read_csv("probartarea3.csv", nrows=nrows) 
