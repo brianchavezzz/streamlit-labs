@@ -34,9 +34,10 @@ data=data[(data['hora'] == dts)]
 
 
 
-mapa = px.scatter_mapbox(data, lat="lat", lon="lon",size_max=13, zoom=10,width=900, height=450)
-mapa.update_coloraxes(colorbar_tickfont_size=10)
-mapa.update_layout(mapbox_style="open-street-map")
-mapa.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-        
-st.plotly_chart(mapa)
+if dts!=50:
+    mapa = px.scatter_mapbox(data, lat="lat", lon="lon",size_max=13, zoom=10,width=900, height=450)
+    mapa.update_coloraxes(colorbar_tickfont_size=10)
+    mapa.update_layout(mapbox_style="open-street-map")
+    mapa.update_layout(margin={"r":0,"t":0,"l":0,"b":0})        
+    st.plotly_chart(mapa)
+
