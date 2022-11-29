@@ -86,6 +86,6 @@ if opcion=='TAREA_4':
 
 
 
-    st.map(data,9,False)
+    st.map(data,9)
 
 
