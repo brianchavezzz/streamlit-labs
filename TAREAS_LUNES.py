@@ -59,22 +59,18 @@ if opcion=='TAREA_4':
     st.text('Viajes de Uber en la ciudad de Nueva York con filtros por hora. ')
 
 
-    def load_data(nrows): 
-        data = pd.read_csv("probartarea3.csv", nrows=nrows) 
+   
+    data = pd.read_csv("probartarea3.csv", nrows=10000) 
 
-        lowercase = lambda x: str(x).lower() 
+    lowercase = lambda x: str(x).lower() 
 
-        data.rename(lowercase, axis='columns', inplace=True) 
+    data.rename(lowercase, axis='columns', inplace=True) 
 
-        data=data.dropna()
+    data=data.dropna()
 
-        data['date/time'] = pd.to_datetime(data['date/time']) 
+    data['date/time'] = pd.to_datetime(data['date/time']) 
 
-        data["hora"]=[(hora.hour) for hora in data["date/time"]]
-
-        return data 
-
-    data = load_data(10000) # probar con 100, 1000, etc
+    data["hora"]=[(hora.hour) for hora in data["date/time"]]  # probar con 100, 1000, etc
 
 
     dts = st.slider('Rango de fechas: ',
