@@ -39,5 +39,6 @@ if dts!=50:
     mapa.update_coloraxes(colorbar_tickfont_size=10)
     mapa.update_layout(mapbox_style="open-street-map")
     mapa.update_layout(margin={"r":0,"t":0,"l":0,"b":0})        
-    st.plotly_chart(mapa)
+ 
+st.plotly_chart(mapa)
 
